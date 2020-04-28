@@ -26,14 +26,14 @@ $.ajax({
       data = JSON.parse(data);
       console.log(data[0].numberOfDeath);
       for(i = 0; i < data.length; i++) {
-          newData.push({"name": data[i].nameOfGame, "value": parseInt(data[i].numberOfDeath)});
+          newData.push({"name": data[i].nameOfGame, "value": parseInt(data[i].numberOfDeath), "time": parseInt(data[i].timeOfPlaying)});
           console.log(newData);
       }
       beginGraph();
   });
 
 function beginGraph() {
-    let = margin = ({top: 50, right: 30, bottom: 30, left: 30}),
+let = margin = ({top: 50, right: 0, bottom: 30, left: 40}),
     width = 500,
     height = 500;
 
@@ -78,21 +78,27 @@ const gx = svg.append("g")
 const gy = svg.append("g")
     .call(yAxis);
 
-    x.domain(data.sort().map(d => d.name));
+    function update(order) {
+        
+        x.domain(data.sort().map(d => d.time));
+        const t = svg.transition()
+            .duration(750);
 
-const t = svg.transition()
-        .duration(750);
+        bar.data(data, d => d.name)
+            .order()
+            .transition(t)
+            .delay((d, i) => i * 20)
+            .attr("x", d => x(d.name));
 
-    bar.data(data, d => d.name)
-        .order()
-        .transition(t)
-        .delay((d, i) => i * 20)
-        .attr("x", d => x(d.name));
+        gx.transition(t)
+            .call(xAxis)
+            .selectAll(".tick")
+            .delay((d, i) => i * 20);
+    }
 
-    gx.transition(t)
-        .call(xAxis)
-        .selectAll(".tick")
-        .delay((d, i) => i * 20);
+    bar.on('click', function(d) {
+        update();
+    });
 }
 </script>
 </body> 
