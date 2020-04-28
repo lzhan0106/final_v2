@@ -1,12 +1,13 @@
+const express = require('express');
 const router = require('express').Router();
-const addRouter = require('./contacts');
+const addRouter = require('./games');
 const path = require('path');
 
 // API routes
-router.use('/contacts', addRouter);
+router.use('/games', addRouter);
 
 router.get('/', (req, res) => {
-	router.use(express.static(__dirname + '/public/final.html'));
+	res.send('Test');
 });
 
 module.exports = router;

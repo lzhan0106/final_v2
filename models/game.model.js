@@ -1,11 +1,11 @@
 const mongoose = require('mongoose');
 
-const contactSchema = new mongoose.Schema({
+const gameSchema = new mongoose.Schema({
     numberOfDeath: String,
     timeOfPlaying: String,
     nameOfGame: String,
 });
 
-const Contact = mongoose.model("Contact", contactSchema);
+const Game = mongoose.model("Game", gameSchema);
 
-module.exports = Contact;
+module.exports = Game;

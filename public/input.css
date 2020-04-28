@@ -9,6 +9,21 @@ body {
 }
 
 #wrapper {
-margin: 0 auto;
-padding: 5%;
+  margin: 0 auto;
+  padding: 5%;
+}
+
+.bar {
+  display: inline-block;
+  width: 120px;
+  height: 175px;
+  background-color: teal;
+  margin-right: 5px;
+}
+
+h1{
+     text-shadow: black 0.1em 0.1em 0.2em
+}
+h2{
+     text-shadow: black 0.1em 0.1em 0.2em
 }
