@@ -26,6 +26,11 @@ connection.once(
 );
 
 app.use(express.static('public'));
+app.use(express.static('public/js'));
+
+app.get('/graph', (req, res) => {
+	res.sendFile(__dirname + '/public/graph.html');
+});
 
 app.use(routes);
 

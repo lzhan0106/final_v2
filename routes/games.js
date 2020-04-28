@@ -23,7 +23,7 @@ router.route('/add').post((req, res) => {
     const newGame = new Game(req.body);
   
     newGame.save()
-      .then(() => res.json('Game added!!'))
+      .then(() => res.redirect('/graph'))
       .catch(err => res.status(400).json('Error: ' + err));
 });
 

@@ -24,6 +24,11 @@ body {
 h1{
      text-shadow: black 0.1em 0.1em 0.2em
 }
-h2{
+
+h2 {
      text-shadow: black 0.1em 0.1em 0.2em
+}
+
+svg {
+  margin: 0 auto;
 }
