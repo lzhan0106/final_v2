@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Game of the Year</title>
+
+    <link rel="stylesheet" href="node_modules/animate.css/animate.min.css">
+    <link rel="stylesheet" href="input.css">
+
+    <style>
+         div.bar {
+				display: inline-block;
+				width: 120px;
+				height: 175px;
+                background-color: teal;
+                margin-right: 5px;
+            }
+
+        body {
+			    padding: 10px 20px;
+		}
+		h1{
+			     text-shadow: black 0.1em 0.1em 0.2em
+			}
+		h2{
+			     text-shadow: black 0.1em 0.1em 0.2em
+		}
+         </style>
+    
+</head>  
+<body>
+	<h1>Game of the Year</h1>
+	<div id="content" class="animated shake"></div>
+	<h2>Data from the games I played, which created by Fromsoftware</h2>
+	<h2>Add your data in this form if you like soul-like games!</h2>
+    
+    <h1>Tell me your Data!</h1>
+
+	<div class="contact">
+		<form method="post" action="/contacts/add">
+			<div class="form-field">
+				<label>number of death</label><br>
+				<input type="number" name="numberOfDeath" placeholder="" required>				
+			</div>
+			<div class="form-field">
+				<label>time of playing</label><br>
+				<input type="number" name="timeOfPlaying" placeholder="" required>
+			</div>
+			<div class="form-field">
+				<label>name of game</label><br>
+				<input type="text" name="nameOfGame" placeholder="" required>
+			</div>
+			<input class="submit" type="submit" value="Submit">
+		</form>
+    </div>
+    
+<script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+<script type = "text/javascript" src="d3.js"></script>
+<script type="text/javascript" src="d3.min.js"></script>
+<script type="text/javascript" src="script.js"></script>
+
+</body> 
+</html>

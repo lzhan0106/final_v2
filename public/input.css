@@ -1,0 +1,14 @@
+body {
+  background-image: url('../images/1.jpg');
+  background-repeat:repeat;
+  color: aliceblue;
+  background-size: 100%;
+  font-family:'Times New Roman', Times, serif;
+  padding: 10px 20px;
+  height: 1200px;
+}
+
+#wrapper {
+margin: 0 auto;
+padding: 5%;
+}
